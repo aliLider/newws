@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{query}}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+           {% for post in search_obj %}
+           <div class="col-md-4">
+            <div class="card">
+                {% if post.image.url != null%}
+                <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
+                {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title">{{post.title}}</h5>
+                  <p class="card-text">{{post.content}}</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+           {% empty %}
+            <h1 class="text-center">Suralgan "{{query}}" boyicha hech narsa topilmadi</h1>
+           {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

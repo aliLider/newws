@@ -1,0 +1,15 @@
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <label for="">{{form.username.label}}</label>
+    <span class="input">{{form.first_name}}</span>
+    <span class="input">{{form.last_name}}</span>
+    <span class="input">{{form.username}}</span>
+    <span class="input">{{form.email}}</span>
+    <span class="input">{{form.password1}}</span>
+    <span class="input">{{form.password2}}</span>
+    <button>Ro`yhatdan o`tish</button>
+    <button><a href="{% url 'login' %}">Kirish</button></a>
+    <button><a href="{% url 'index' %}">
+            Asosiy sahifa
+    </a></button>
+</form>

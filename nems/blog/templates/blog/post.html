@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{post.title}}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">{{post.title}}</h1>
+<hr>
+{% if post.image.url != null %}
+    <img class="card-img-top" src="{{post.image}}" alt="Card image cap">
+{% endif %}
+<p>{{post.content}}</p>
+<p><b>{{post.views}}</b> </p>
+<b>{{post.date}}</b>   
+
+{% endblock %}
+
+
+

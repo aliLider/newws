@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kategoriyalar
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                {% for category in categories %}
+                <div class="col-md-2">
+                    <div class="card">
+                        {% if category.image.url != null %}
+                        <img class="card-img-top" src="{{category.image.url}}" alt="{{category.title}}">
+                        {% endif %} 
+                        <div class="card-body">
+                          <h5 class="card-title">{{category.title}}</h5>
+                         <a href="{% url 'category' category.id %}" class="btn btn-primary">Barcha postlari</a>
+                        </div>
+                      </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
